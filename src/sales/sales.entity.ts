@@ -1,4 +1,4 @@
-import {Entity, Column, PrimaryGeneratedColumn, Double, AfterInsert, AfterUpdate, AfterRemove } from 'typeorm'; 
+import {Entity, Column, PrimaryGeneratedColumn, AfterInsert, AfterUpdate, AfterRemove } from 'typeorm'; 
 
 @Entity()
 export class Sales {
@@ -21,7 +21,7 @@ export class Sales {
     sales: number;
 
     @Column()
-    lastPurchaseDate: Date;
+    lastPurchaseDate: string;
 
     @AfterInsert()
     logInsert(){
