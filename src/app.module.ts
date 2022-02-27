@@ -12,17 +12,7 @@ import { Sales } from './sales/sales.entity';
       isGlobal: true,
       envFilePath: `.env.${process.env.NODE_ENV}`
     }),
-    TypeOrmModule.forRootAsync({
-      inject: [ConfigService],
-      useFactory: (config: ConfigService) => {
-        return {
-          type: 'sqlite',
-          database: config.get<string>('DB_NAME'),
-          synchronize: true,
-          entities: [Sales],
-        };
-      }
-    }),
+    TypeOrmModule.forRoot(),
    SalesModule],
   controllers: [AppController],
   providers: [AppService],
