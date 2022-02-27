@@ -1,2 +1,5 @@
+### Example request using date range
+GET http://localhost:3000/sales/report/start=2022-03-11&end=2022-03-12
 
-GET http://localhost:3000/sales/report/start=01-01-2022&end=02-31-2022
+### Example request using single date
+GET http://localhost:3000/sales/report/start=2022-03-11
