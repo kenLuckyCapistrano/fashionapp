@@ -22,7 +22,7 @@ export class SalesController {
         const csvFile = readFileSync('./files/dummy.csv');
         const data = csvFile.toString();
 
-        const parsedData = await  parse(data, {
+        const parsedData = await parse(data, {
             header:true,
             skipEmptyLines:true,
             transformHeader: (header) => camelcase(header.toLowerCase().replace('#','').trim()),
@@ -33,12 +33,8 @@ export class SalesController {
             throw new Error('No data to process');
         }
         for (const element of parsedData.data) {
-            await this.salesService.create(element['userName'], parseInt(element['age']), parseFloat(element['height']), element['gender'], parseFloat(element['sales']),element['lastPurchaseDate']);
-        }
-        
-        
-       
-        
+            await this.salesService.upload(element['userName'], parseInt(element['age']), parseFloat(element['height']), element['gender'], parseFloat(element['sales']),element['lastPurchaseDate']);
+        }       
     }
     
     @Get('/report')
