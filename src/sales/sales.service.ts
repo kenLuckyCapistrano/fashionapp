@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import {Repository} from 'typeorm';
 import {InjectRepository} from '@nestjs/typeorm';
 import { Sales } from './sales.entity';
@@ -12,4 +12,11 @@ export class SalesService {
         
         return this.repo.save(saleDetails);
     }
+
+    findOne(userName: string) {
+        if (!userName) {
+          return new Error(`No user name supplied`);
+        }
+        return this.repo.findOne(userName);
+      }
 }

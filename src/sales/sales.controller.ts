@@ -1,4 +1,4 @@
-import { Controller, Get, Post, UseInterceptors, UnsupportedMediaTypeException } from '@nestjs/common';
+import { Controller, Get, Post, UseInterceptors, UnsupportedMediaTypeException, Param,  } from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { readFileSync } from 'fs';
 import { diskStorage } from 'multer';
@@ -37,8 +37,16 @@ export class SalesController {
         }       
     }
     
-    @Get('/report')
-    getReport(){
-
+    @Get('/report/:date')
+    async getReport(@Param('date') date: string){
+       let start,end;
+       if (date.indexOf('&')){
+            [start,end]==date.split('&');
+       }
+       else{
+        date.indexOf('start')? start=date : end=date;  
+       }
+       
     }
+    
 }

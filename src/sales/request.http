@@ -1,1 +1,2 @@
 
+GET http://localhost:3000/sales/report/start=01-01-2022&end=02-31-2022
