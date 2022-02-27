@@ -1,12 +1,12 @@
 import { Test, TestingModule } from '@nestjs/testing';
+import { Sales } from './sales.entity';
 import { SalesService } from './sales.service';
 
 it('it can create an instance of sales service', async () => {
   //Create a fake copy of sales service
-  const fakeSalesService = {
-    find: () => Promise.resolve([]),
+  const fakeSalesService: Partial<SalesService> = {
     create: (userName: string, age: number, height: number, gender: string, sales: number, lastPurchaseDate: string) =>
-     Promise.resolve({id:1,userName, age, height, gender,sales,lastPurchaseDate}),
+     Promise.resolve({id:1,userName, age, height, gender,sales,lastPurchaseDate} as Sales),
   };
 
   const module = await Test.createTestingModule({
