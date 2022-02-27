@@ -1,12 +1,11 @@
-import { Controller, Get, Post, UseInterceptors, UnsupportedMediaTypeException, Param,  } from '@nestjs/common';
-import { FileInterceptor } from '@nestjs/platform-express';
-import { readFileSync } from 'fs';
+import { Controller, Get, Post, UseInterceptors, Param  } from '@nestjs/common';
+import { FileInterceptor, } from '@nestjs/platform-express';
+import { readFileSync, writeFileSync } from 'fs';
 import { diskStorage } from 'multer';
 import { SalesService } from './sales.service';
 import { parse } from 'papaparse';
-import camelcase
- from 'camelcase';
-import e from 'express';
+import camelcase from 'camelcase';
+
 @Controller('sales')
 export class SalesController {
     constructor (private salesService: SalesService){}
@@ -48,7 +47,12 @@ export class SalesController {
        else{
         start=date.replace('start=','').replace('end=','');  
        }    
-       const result= await this.salesService.searchByDate(start,end);  
+       const homeDir = require('os').homedir();
+
+      
+       const result = await this.salesService.searchByDate(start,end);
+       const jsonoutput = writeFileSync(`${homeDir}/Downloads/salesreport${start}${end? `- ${end}`:``}.json`, JSON.stringify(result));
+       
        return result;
     }
     
