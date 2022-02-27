@@ -1,3 +1,5 @@
+.env.development
+.env.test
 # compiled output
 /dist
 /node_modules
@@ -33,3 +35,23 @@ lerna-debug.log*
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+.../.eslintrc.js
+.../.prettierrc
+.../db.fashiondb
+.../db.sqlite
+.../files/1d2400d9ec71bfd150f3b0f5a6298494
+.../files/820ea633d3f9a71b3e9979eaf97cc259
+.../files/ad38ed92000820897419337d4ee25830
+.../nest-cli.json
+.../package-lock.json
+.../package.json
+.../README.md
+.../salesdata.csv
+.../tsconfig.build.json
+.../tsconfig.json
+db.sqlite
+files/dummy.csv
+files/output.json
+db.sqlite
+db.sqlite
+files/dummy.csv
