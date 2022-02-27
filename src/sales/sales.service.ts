@@ -1,5 +1,5 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import {Repository} from 'typeorm';
+import {Repository, Between} from 'typeorm';
 import {InjectRepository} from '@nestjs/typeorm';
 import { Sales } from './sales.entity';
 
@@ -13,10 +13,25 @@ export class SalesService {
         return this.repo.save(saleDetails);
     }
 
-    findOne(userName: string) {
-        if (!userName) {
-          return new Error(`No user name supplied`);
+    searchByDate(start: Date, end: Date) {
+        if (!start) {
+          return new Error(`No date supplied`);
         }
-        return this.repo.findOne(userName);
-      }
+        
+        if (end){
+           return this.repo.find({
+                where: {
+                    lastPurchaseDate: Between(start,end)
+                }
+            })
+        }
+        
+        return this.repo.find({
+            where: {
+                lastPurchaseDate: start
+            }
+        });
+        
+    }
+
 }

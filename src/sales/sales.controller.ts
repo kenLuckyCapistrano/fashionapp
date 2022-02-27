@@ -6,6 +6,7 @@ import { SalesService } from './sales.service';
 import { parse } from 'papaparse';
 import camelcase
  from 'camelcase';
+import e from 'express';
 @Controller('sales')
 export class SalesController {
     constructor (private salesService: SalesService){}
@@ -41,12 +42,14 @@ export class SalesController {
     async getReport(@Param('date') date: string){
        let start,end;
        if (date.indexOf('&')){
-            [start,end]==date.split('&');
+            [start,end]=date.replace('start=','').replace('end=','').split('&');
+            
        }
        else{
-        date.indexOf('start')? start=date : end=date;  
-       }
-       
+        start=date.replace('start=','').replace('end=','');  
+       }    
+       const result= await this.salesService.searchByDate(start,end);  
+       return result;
     }
     
 }
