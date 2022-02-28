@@ -15,7 +15,7 @@
 
 
 
-# heroku home: https://damp-mountain-19416.herokuapp.com
+# App hosted on heroku: https://damp-mountain-19416.herokuapp.com
 
 
 Implement following api: 
