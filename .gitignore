@@ -50,8 +50,6 @@ lerna-debug.log*
 .../tsconfig.build.json
 .../tsconfig.json
 db.sqlite
-files/dummy.csv
 files/output.json
 db.sqlite
 db.sqlite
-files/dummy.csv

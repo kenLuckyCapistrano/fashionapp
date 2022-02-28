@@ -47,11 +47,11 @@ export class SalesController {
        else{
         start=date.replace('start=','').replace('end=','');  
        }    
-       const homeDir = require('os').homedir();
+    //    const homeDir = require('os').homedir();
 
       
        const result = await this.salesService.searchByDate(start,end);
-       const jsonoutput = writeFileSync(`${homeDir}/Downloads/salesreport${start}${end? `- ${end}`:``}.json`, JSON.stringify(result));
+    //    const jsonoutput = writeFileSync(`${homeDir}/Downloads/salesreport${start}${end? `- ${end}`:``}.json`, JSON.stringify(result));
        
        return result;
     }
