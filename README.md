@@ -21,7 +21,7 @@
 Implement following api: 
 1. `/sales/record` to receive the data in CSV format
 
-METHOD POST 
+# METHOD POST 
 
 /sales/record
 
@@ -35,25 +35,25 @@ file		salesdata.csv (format provided `USER_NAME,AGE,HEIGHT,GENDER,SALES,LAST_PUR
 
 2. `/sales/report` to query data in json format.
 
-#METHOD GET
+# METHOD GET
 /sales/report/
 
 
 
-URL Parameter format
-Get by date Range
+# URL Parameter format
+- Get by date Range
 
-start and end date seperated by &
-start=2022-03-11&end=2022-03-12
+- start and end date seperated by &
+- start=2022-03-11&end=2022-03-12
 
 sample final URL: https://damp-mountain-19416.herokuapp.com/sales/report/start=2022-03-11&end=2022-03-12
 
 or
 
-Get by specific date
-start=2022-03-11
+- Get by specific date
+- start=2022-03-11
 
-sample final URL: https://damp-mountain-19416.herokuapp.com/sales/report/start=2022-03-11
+- sample final URL: https://damp-mountain-19416.herokuapp.com/sales/report/start=2022-03-11
 
 
 
