@@ -4,11 +4,13 @@
 
 # use POSTMAN collection provided in the zip file below 
 
-- (https://github.com/kenLuckyCapistrano/fashionapp/files/8150275/Setup.Files.zip)[Setup Files.zip]
+- [Setup Files.zip](https://github.com/kenLuckyCapistrano/fashionapp/files/8150337/Setup.Files.zip)
+
 - filename: POSTMANken.lucky.capistranomanulife.postman_collection.json
 
 # use example csv file for uploading data provided in the zip file below
-- (https://github.com/kenLuckyCapistrano/fashionapp/files/8150275/Setup.Files.zip)[Setup Files.zip]
+- [Setup Files.zip](https://github.com/kenLuckyCapistrano/fashionapp/files/8150339/Setup.Files.zip)
+
 - filename: salesdata.csv
 
 
