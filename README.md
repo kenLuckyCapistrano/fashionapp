@@ -1,36 +1,44 @@
 --setup guide
-git link: 
-https://github.com/kenLuckyCapistrano/fashionapp
+# git link: 
+- https://github.com/kenLuckyCapistrano/fashionapp
 
-use POSTMAN collection provided in the zip file below 
-(https://github.com/kenLuckyCapistrano/fashionapp/files/8150275/Setup.Files.zip)[Setup Files.zip]
-filename: POSTMANken.lucky.capistranomanulife.postman_collection.json
+# use POSTMAN collection provided in the zip file below 
 
-and use example csv file for uploading data provided in the zipe file below
-(https://github.com/kenLuckyCapistrano/fashionapp/files/8150275/Setup.Files.zip)[Setup Files.zip]
-filename: salesdata.csv
+- (https://github.com/kenLuckyCapistrano/fashionapp/files/8150275/Setup.Files.zip)[Setup Files.zip]
+- filename: POSTMANken.lucky.capistranomanulife.postman_collection.json
 
-
-
+# and use example csv file for uploading data provided in the zip file below
+- (https://github.com/kenLuckyCapistrano/fashionapp/files/8150275/Setup.Files.zip)[Setup Files.zip]
+- filename: salesdata.csv
 
 
-heroku home: https://damp-mountain-19416.herokuapp.com
+
+
+
+# heroku home: https://damp-mountain-19416.herokuapp.com
 
 
 Implement following api: 
 1. `/sales/record` to receive the data in CSV format
 
 METHOD POST 
+
 /sales/record
+
 Body
+
 form-data
-Key		Value
+
 file		salesdata.csv (format provided `USER_NAME,AGE,HEIGHT,GENDER,SALES,LAST_PURCHASE_DATE`)
+
+
 
 2. `/sales/report` to query data in json format.
 
-METHOD GET
+#METHOD GET
 /sales/report/
+
+
 
 URL Parameter format
 Get by date Range
