@@ -1,5 +1,9 @@
 var dbConfig = {
-    synchronize: false
+    synchronize: false,
+    migrations: ['migrations/*.js'],
+    cli: {
+        migrationsDir: 'migrations',
+    },
 };
 
 
@@ -23,3 +27,6 @@ switch (process.env.NODE_ENV) {
     default:
         throw new Error('Unknown Environment')
 }
+
+
+module.exports = dbConfig;
